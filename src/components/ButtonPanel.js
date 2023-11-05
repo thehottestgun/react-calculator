@@ -13,6 +13,7 @@ export default class ButtonPanel extends React.Component {
     }
 
     render(){
+        const clickHandler = this.props.clickHandler;
         return(<>
             <div className="button-panel-component">
                 {CalculatorLayout.map((calculatorRow, rowIndex) => {
@@ -20,9 +21,9 @@ export default class ButtonPanel extends React.Component {
                     <div key={rowIndex} className="calculator-row">
                         {calculatorRow.map((button, buttonIndex) => {
                             const orange = buttonIndex === calculatorRow.length -1;
-                            const wide = false;
+                            const wide = button === '0';
                             return(
-                                <Button key={buttonIndex} name={button} orange={orange} wide={wide} clickHandler={this.props.clickHandler}/>
+                                <Button key={buttonIndex} name={button} orange={orange} wide={wide} clickHandler={clickHandler}/>
                             );
                         })}
                     </div>);

@@ -13,6 +13,17 @@
   }
 }
 
+.root {
+  top: 50%;
+  height: 100vh;
+}
+
+.calculator{
+  height: 100%;
+  width: 30vmin;
+  margin: auto;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
