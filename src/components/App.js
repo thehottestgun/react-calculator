@@ -19,7 +19,7 @@ export default class App extends React.Component {
     return (
       <>
         <div className="calculator">
-          <Display value={this.state.next || this.state.total || "0"} />
+          <Display value={this.state.total || this.state.next || "0"} />
           <ButtonPanel clickHandler={this.handleClick}/>
         </div>
       </>

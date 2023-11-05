@@ -27,20 +27,20 @@ export default function calculate(state, name) {
         const next  = state.next === '0' ? name : state.next + name;
         return {
             next,
-            total: null
+            total: state.next
         };
     }
     return {
         next: name,
-        total: null
+        total: name
     };
   } else if(OperationSigns.includes(name)){
     if(state.next){
         const result = operate(state.total ?? 0, state.next, state.operation, name);
         return {
-            next: state.next,
+            next: name === '=' ? state.next : null,
             total: result,
-            operation: name
+            operation: name === '=' ? state.operation : name
         }
     }
     return {
